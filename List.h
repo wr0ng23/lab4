@@ -1,6 +1,4 @@
 #pragma once
-#include <iostream>
-#include <typeinfo>
 
 template <typename var>
 class List;
