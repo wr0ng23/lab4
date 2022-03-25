@@ -36,11 +36,11 @@ void SelectionSort(char** mass, size_t size, char flag)
 		{
 			if (flag == 'u')
 			{
-				if (strcmp(mass[minPosition], mass[j]) > 0)
+				if (strcmp(mass[minPosition], mass[j]) < 0)
 					minPosition = j;
 			}
 			else
-				if (strcmp(mass[minPosition], mass[j]) < 0)
+				if (strcmp(mass[minPosition], mass[j]) > 0)
 					minPosition = j;
 		}
 

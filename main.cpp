@@ -116,13 +116,16 @@ void creating_mass_and_sort()
 			<< "3) Вернутся назад\n";
 
 		int c = input<int>();
+		system("cls");
 		switch (c)
 		{
 		case 1:
 			SelectionSort(mass, size_mass);
+			cout << "Массив отсортирован по возрастанию:\n";
 			break;
 		case 2:
 			SelectionSort(mass, size_mass, 'l');
+			cout << "Массив отсортирован по убыванию:\n";
 			break;
 		case 3:
 			system("cls");
@@ -135,8 +138,6 @@ void creating_mass_and_sort()
 		}
 		if (flag == true)
 		{
-			system("cls");
-			cout << "Отсортированный массив:\n";
 			for (size_t i = 0; i < size_mass; ++i)
 			{
 				cout << mass[i] << " ";
@@ -166,6 +167,7 @@ void creating_mass_and_sort<char*>()
 		strcpy(const_cast<char*>(mass[i]), subline);
 		cout << endl;
 	}
+	system("pause");
 	while (1)
 	{
 		bool flag = true;
@@ -176,13 +178,16 @@ void creating_mass_and_sort<char*>()
 			<< "3) Вернутся назад\n";
 
 		int c = input<int>();
+		system("cls");
 		switch (c)
 		{
 		case 1:
-			SelectionSort(mass, n_strings);
+			SelectionSort(const_cast<char**>(mass), n_strings, 'u');
+			cout << "Массив отсортирован по возрастанию:\n";
 			break;
 		case 2:
-			SelectionSort(mass, n_strings, 'l');
+			SelectionSort(const_cast<char**>(mass), n_strings, 'l');
+			cout << "Массив отсортирован по убыванию:\n";
 			break;
 		case 3:
 			system("cls");
@@ -195,11 +200,9 @@ void creating_mass_and_sort<char*>()
 		}
 		if (flag == true)
 		{
-			system("cls");
-			cout << "Отсортированный массив:\n";
 			for (size_t i = 0; i < n_strings; ++i)
 			{
-				cout << mass[i] << endl;
+				cout << i + 1 << ") " << mass[i] << endl;
 			}
 		}
 		cout << endl;
@@ -285,7 +288,7 @@ void menu_list2(List<T>& list1)
 			{
 				if (list1.get_size_of_List() == 0)
 					throw std::string("Список пока что пуст\n");
-				cout << list1;
+				cout << "Элементы текущего списка:\n" << list1;
 				system("pause");
 				break;
 			}
